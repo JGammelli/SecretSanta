@@ -2,43 +2,36 @@ export const projects = [
   {
     "id": 1,
     "title": "Judith",
-    "secretSantaTo": "Lillian och Åke",
+    "secretSantaTo": "",
     "wishList": {},
-    "isPicked": true
+    "isPicked": false
   },
   {
     "id": 2,
     "title": "Elin",
-    "secretSantaTo": "Bertil",
+    "secretSantaTo": "",
     "wishList": {},
-    "isPicked": true
+    "isPicked": false
   },
   {
     "id": 3,
     "title": "Line",
-    "secretSantaTo": "Stefan",
+    "secretSantaTo": "",
     "wishList": {},
-    "isPicked": true
+    "isPicked": false
   },
   {
     "id": 4,
     "title": "Stefan",
-    "secretSantaTo": "Line",
+    "secretSantaTo": "",
     "wishList": {},
-    "isPicked": true
-  },
-  {
-    "id": 5,
-    "title": "Bertil",
-    "secretSantaTo": "Elin",
-    "wishList": {},
-    "isPicked": true
+    "isPicked": false
   },
   {
     "id": 6,
     "title": "Lillian och Åke",
-    "secretSantaTo": "Judith",
+    "secretSantaTo": "",
     "wishList": {},
-    "isPicked": true
+    "isPicked": false
   }
 ];
