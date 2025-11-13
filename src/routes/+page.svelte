@@ -1,28 +1,32 @@
 <script>
-import { projects } from '../lib/data/projects';
+	// import { people } from '../lib/data/projects';
+	import { onMount } from 'svelte';
+
+ 	export let people = [];
+
+	onMount(async () => {
+        const res = await fetch('/api/people');
+        people = await res.json();
+		console.log(people);
+		
+    });
+
 </script>
 
 <div>
 	<div class="container">
-		{#each projects as project}
+		{#each people as person}
             <div class="projectContainer">
-				<a href={`/project/${project.title}`}>
+				<a href={`/people/${encodeURIComponent(person.name)}`}>
 							<div class="text">
 								<h3>
-									{project.title}
+									{person.name}
 								</h3>
 							</div>
 							</a>
-							<!-- <div class="pointer">
-								<a href={`/project/${project.title}`}>
-								<svg class="svgPointer" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect x="0.707107" y="36" width="49.9117" height="49.9117" transform="rotate(-45 0.707107 36)" fill="#ff9d42" stroke="#878787" />
-									<path d="M42.6406 35.9999H29.3593M29.3593 35.9999L31.6269 33.7864M29.3593 35.9999L31.6269 38.2135" stroke="#878787" stroke-linecap="round"/>
-								</svg></a>
-							</div> -->
 			</div>
         {:else}
-            <div>Bringing the projects...</div>
+            <div>Bringing the people...</div>
         {/each}
 	</div>
     

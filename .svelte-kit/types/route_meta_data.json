@@ -1,7 +1,15 @@
 {
 	"/": [],
-	"/project/[slug]": [
-		"src/routes/project/[slug]/+page.js",
-		"src/routes/project/[slug]/+server.js"
+	"/api/people": [
+		"src/routes/api/people/+server.js"
+	],
+	"/api/people/auto-assign": [
+		"src/routes/api/people/auto-assign/+server.js"
+	],
+	"/api/people/[name]": [
+		"src/routes/api/people/[name]/+server.js"
+	],
+	"/people/[slug]": [
+		"src/routes/people/[slug]/+page.js"
 	]
 }
