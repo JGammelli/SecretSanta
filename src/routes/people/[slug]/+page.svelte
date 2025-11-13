@@ -14,30 +14,29 @@
       setReaminingSanta(people);
   });
 
-    console.log("Name is:" + personData.name);
-
-  async function setSecretSanta(name) {
+  async function setSecretSanta(reciever, giver) {
+    console.log(reciever);
     
+
     try {
 
-    await fetch(`/api/people/${encodeURIComponent(personData.name)}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ secretSantaTo: name })
-    });
+      await fetch(`/api/people/${encodeURIComponent(giver)}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ secretSantaTo: reciever })
+      });
 
-    await fetch(`/api/people/${encodeURIComponent(name)}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ isPicked: true })
-    });
-
-  
-    console.log(" Secret Santa assignment updated successfully!");
-    } catch (err) {
-      console.error(" Error assigning Secret Santa:", err);
-    }
-    location.href = location.href;
+      await fetch(`/api/people/${encodeURIComponent(reciever)}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ isPicked: true })
+      });
+    
+      console.log(" Secret Santa assignment updated successfully!");
+      } catch (err) {
+        console.error(" Error assigning Secret Santa:", err);
+      }
+      location.href = location.href;
     
   }
 
@@ -60,12 +59,32 @@
 
         console.log(`${lonelySanta.name} is now Secret Santa to ${target.name}`);
 
-        setSecretSanta(target.name);
+        setSecretSanta(target.name, lonelySanta.name);
+        // try {
+        //   await fetch(`/api/people/${encodeURIComponent(lonelySanta.name)}`, {
+        //   method: "PATCH",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify({ secretSantaTo: target.name })
+        //   });
+
+        //   await fetch(`/api/people/${encodeURIComponent(target.name)}`, {
+        //     method: "PATCH",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify({ isPicked: true })
+        //   });
         
+        //   console.log(" Secret Santa assignment updated successfully!");
+        //   console.log(lonelySanta.name + " is santa to " + lonelySanta.secretsantato );
+        //   console.log(target.name + " is " + target.ispicked );
+          
+        //   } catch (err) {
+        //     console.error(" Error assigning Secret Santa:", err);
+        //   }
+        }
       }
-    }
-  
+    
   }
+
 </script>
 
 
@@ -89,7 +108,7 @@
       {#each people as person}
         {#if person.name !== personData.name}
               <div class="projectContainer">
-                <button class="text" on:click={() => setSecretSanta(person.name)}>
+                <button class="text" on:click={() => setSecretSanta(person.name, personData.name)}>
                   <h3>
                     {person.name}
                   </h3>
