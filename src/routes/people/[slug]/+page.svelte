@@ -59,27 +59,9 @@
         target.ispicked = true;
 
         console.log(`${lonelySanta.name} is now Secret Santa to ${target.name}`);
-        try {
-          await fetch(`/api/people/${encodeURIComponent(personData.name)}`, {
-          method: "PATCH",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ secretSantaTo: target.name })
-          });
 
-          await fetch(`/api/people/${encodeURIComponent(target.name)}`, {
-            method: "PATCH",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ isPicked: true })
-          });
+        setSecretSanta(target.name);
         
-          console.log(" Secret Santa assignment updated successfully!");
-          console.log(lonelySanta.name + " is santa to " + lonelySanta.secretsantato );
-          console.log(target.name + " is " + target.ispicked );
-          
-          } catch (err) {
-            console.error(" Error assigning Secret Santa:", err);
-          }
-        }
       }
     }
   
