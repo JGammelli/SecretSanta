@@ -37,8 +37,8 @@
     } catch (err) {
       console.error(" Error assigning Secret Santa:", err);
     }
-    // location.href = location.href;
-    // 
+    location.href = location.href;
+    
   }
 
 
