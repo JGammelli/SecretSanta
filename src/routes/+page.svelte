@@ -128,7 +128,7 @@
 			position: absolute;
 			bottom: 1vw;
 			left: 1vw;
-			text-align: start;
+			/* text-align: start; */
 		}
 		.text p{
 			display: none;
