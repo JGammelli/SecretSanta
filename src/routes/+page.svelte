@@ -66,7 +66,6 @@
 		width: 50%;
 		margin-bottom: 2vw;
 		margin-top: 2vw;
-		height: 200vh;
 	}
 	.project{
 		margin: 0 2vw;
@@ -121,7 +120,7 @@
 	@media (max-width: 1024px) {
 	
 		.text{
-			position: absolute;
+			/* position: absolute; */
 			bottom: 1vw;
 			left: 1vw;
 			/* text-align: start; */
