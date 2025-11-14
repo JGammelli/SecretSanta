@@ -66,18 +66,13 @@
 		width: 50%;
 		margin-bottom: 2vw;
 		margin-top: 2vw;
-		height: fit-content;
+		height: 200vh;
 	}
 	.project{
 		margin: 0 2vw;
 		height: 17vw;
 	}
-	.img{
-		max-width: 794px;
-		height: 100%;
-		border: 2px solid #d8d7d5;
-
-	}
+	
 	.svg{
 		position: relative;
 		max-width: 794px;
