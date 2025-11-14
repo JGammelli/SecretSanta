@@ -66,6 +66,7 @@
 		width: 50%;
 		margin-bottom: 2vw;
 		margin-top: 2vw;
+		height: fit-content;
 	}
 	.project{
 		margin: 0 2vw;
